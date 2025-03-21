@@ -32,6 +32,7 @@ function Education({ education, setEducation }){
         event.preventDefault();
         education.push(formData);
         setEducation(education);
+        resetForm();
     }
 
     // Enables editing of an existing index in the education array
@@ -56,6 +57,7 @@ function Education({ education, setEducation }){
         education[editingIndex] = formData;
         setEditingIndex(null);
         setEducation(education);
+        resetForm();
     }
 
     // Removes an existing education from the education array
@@ -64,6 +66,15 @@ function Education({ education, setEducation }){
         updatedEducation.splice(index, 1);
         setEducation(updatedEducation);
     };
+
+    const resetForm = () => {
+        setFormData({
+            institution: "",
+            degree: "",
+            startDate: "",
+            endDate: ""
+        })
+    }
     
     return(
         <div className="input-component">
@@ -80,7 +91,7 @@ function Education({ education, setEducation }){
             </div>
 
             {/* Component form */}
-            <div className="education-form" hidden={!showing}>
+            <div className="form-section" hidden={!showing}>
                 <form>
                     <div className="input-field">
                         <label htmlFor="institution">Institution</label>

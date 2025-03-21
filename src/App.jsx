@@ -19,7 +19,10 @@ function App() {
     ],
 
     workExperience: [
-      { jobTitle: "", company: "", startDate: "", endDate: "", responsibilities: [""] }
+      { workplace: "Avalanche", position: "Mercenary", startDate: "", endDate: "", responsibilities: [
+        "Escourting the team inside the reactor", 
+        "Blowing up the reactor",
+      ] }
     ],
 
     summary: "Write something about yourself."
@@ -56,8 +59,18 @@ function App() {
       return updatedData;
     });
   };
-  
 
+   // Replaces resumeData.workExperience with a new workExperience array
+   const setWorkExp = (newWorkExperience) => {
+    setResumeData(prevData => {
+      const updatedData = {
+        ...prevData,
+        workExperience: newWorkExperience
+      };
+      return updatedData;
+    });
+  };
+  
   return (
     <div className="content">
         <InputSection 
@@ -65,6 +78,7 @@ function App() {
             onInputChange={handleInputChange}
             onTextAreaChange={handleTextAreaChange}
             setEducation={setEducation}
+            setWorkExp={setWorkExp}
         />
         <ResumeSection data={resumeData} />
     </div>

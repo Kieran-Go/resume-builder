@@ -86,3 +86,21 @@ form {
     outline: none;
 }
 
+
+.responsibility-list{
+    
+}
+
+.responsibility-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.responsibility-delete-button{
+    width: 10px;
+}
+.responsibility-delete-button:hover{
+    cursor: pointer;
+}
