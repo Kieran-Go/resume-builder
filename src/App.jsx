@@ -3,8 +3,7 @@ import InputSection from "./components/InputSection";
 import ResumeSection from "./components/ResumeSection";
 
 function App() {
-
-  // Contains all resume data
+  // Object to store all resume data
   const [resumeData, setResumeData] = useState({
     personalDetails: {
       name: "",
@@ -12,12 +11,17 @@ function App() {
       phone: "",
       address: ""
     },
+
     education: [
-      { institution: "College of Winterhold", degree: "Ph.D in Destruction Magic", startDate: "", endDate: "" }
+      { institution: "College of Winterhold", degree: "Ph.D in Destruction Magic", startDate: "25/03/2025", endDate: "26/05/2026" },
+      { institution: "Mages Guild", degree: "Master of Illusion Magic", startDate: "01/06/2026", endDate: "30/06/2027" },
+      { institution: "Dark Brotherhood", degree: "Shadow Assassin Training", startDate: "01/07/2027", endDate: "01/01/2028" }
     ],
+
     workExperience: [
       { jobTitle: "", company: "", startDate: "", endDate: "", responsibilities: [""] }
     ],
+
     summary: "Write something about yourself."
   });
 
@@ -41,20 +45,17 @@ function App() {
       summary: newText
     }));
   };
-
-  // Add a new education to the resume data's education array
-  const submitEducation = (newEducation) => {
+  
+  // Replaces resumeData.education with a new education array
+  const setEducation = (newEducation) => {
     setResumeData(prevData => {
       const updatedData = {
         ...prevData,
-        education: [...prevData.education, newEducation]
+        education: newEducation
       };
-      console.log("Updated resumeData:", updatedData);
       return updatedData;
     });
   };
-  
-
   
 
   return (
@@ -63,7 +64,7 @@ function App() {
             data={resumeData}
             onInputChange={handleInputChange}
             onTextAreaChange={handleTextAreaChange}
-            onEducationSubmit={submitEducation}
+            setEducation={setEducation}
         />
         <ResumeSection data={resumeData} />
     </div>

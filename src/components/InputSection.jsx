@@ -3,7 +3,7 @@ import Summary from "./Summary";
 import "../css/InputSection.css";
 import Education from "./Education";
 
-function InputSection({ data, onInputChange, onTextAreaChange, onEducationSubmit}) {
+function InputSection({ data, onInputChange, onTextAreaChange, setEducation}) {
     return (
         <section className="input-section">
             <PersonalDetails 
@@ -15,7 +15,8 @@ function InputSection({ data, onInputChange, onTextAreaChange, onEducationSubmit
                 onTextAreaChange = {onTextAreaChange}
             />
             <Education
-                onEducationSubmit = {onEducationSubmit}
+                education = {data.education}
+                setEducation = {setEducation}
             />
         </section>
     );

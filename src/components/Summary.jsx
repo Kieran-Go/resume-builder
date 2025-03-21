@@ -3,14 +3,16 @@ import documentImg from "../assets/images/document.svg";
 import { useState } from "react";
 
 function Summary({ summary, onTextAreaChange }){
-    const [showing, setShowing] = useState(false);
+    const [showing, setShowing] = useState(false); // Determine whether to show the comonpent's form
 
+    // Toggles showing the form
     const toggleShowing = () => {
         setShowing(prev => !prev);
     };
     
     return(
         <div className="input-component">
+            {/* Component header */}
             <div className="input-head">
                 <img src={documentImg} className="input-icon" alt="Summary Icon"/>
                 <h1>Summary</h1>
@@ -22,6 +24,7 @@ function Summary({ summary, onTextAreaChange }){
                 />
             </div>
 
+            {/* Component form */}
             <form hidden={!showing}>
                 <div className="input-field">
                     <textarea

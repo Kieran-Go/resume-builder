@@ -3,14 +3,16 @@ import personImg from "../assets/images/person.svg";
 import { useState } from "react";
 
 function PersonalDetails({ personalDetails, onInputChange }) {
-    const [showing, setShowing] = useState(false);
+    const [showing, setShowing] = useState(false); // Determine whether to show the comonpent's form
 
+    // Toggles showing the form
     const toggleShowing = () => {
         setShowing(prev => !prev);
     };
 
     return (
         <div className="input-component">
+            {/* Component header */}
             <div className="input-head">
                 <img src={personImg} className="input-icon" alt="Personal Details Icon"/>
                 <h1>Personal Details</h1>
@@ -22,6 +24,7 @@ function PersonalDetails({ personalDetails, onInputChange }) {
                 />
             </div>
 
+            {/* Component form */}
             <form hidden={!showing}>
                 <div className="input-field">
                     <label htmlFor="full-name">Full Name</label>
