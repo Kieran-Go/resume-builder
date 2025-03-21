@@ -43,8 +43,6 @@ function WorkExperience({ workExp, setWorkExp }){
             responsibilities: [...prev.responsibilities, responsibilityInput],
           }));
           setResponsibilityInput("");
-          console.log(responsibilityInput);
-          console.log(formData);
         }
     };
 
@@ -56,7 +54,6 @@ function WorkExperience({ workExp, setWorkExp }){
         }));
     };
     
-
     // Adds a new work experience to the array and sets it in the top level
     const newWorkExp = (event) => {
         event.preventDefault();

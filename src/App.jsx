@@ -25,6 +25,8 @@ function App() {
       ] }
     ],
 
+    skills: ["Skill 1", "Skill 2", "Skill 3"],
+
     summary: "Write something about yourself."
   });
 
@@ -70,6 +72,17 @@ function App() {
       return updatedData;
     });
   };
+
+  // Replaces the skills array in resumeData with a new array
+  const setSkills = (newSkills) => {
+    setResumeData(prevData => {
+      const updatedData = {
+        ...prevData,
+        skills: newSkills
+      };
+      return updatedData;
+    });
+  }
   
   return (
     <div className="content">
@@ -79,6 +92,7 @@ function App() {
             onTextAreaChange={handleTextAreaChange}
             setEducation={setEducation}
             setWorkExp={setWorkExp}
+            setSkills={setSkills}
         />
         <ResumeSection data={resumeData} />
     </div>
