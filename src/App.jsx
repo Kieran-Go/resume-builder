@@ -6,10 +6,10 @@ function App() {
   // Object to store all resume data
   const [resumeData, setResumeData] = useState({
     personalDetails: {
-      name: "",
-      email: "",
-      phone: "",
-      address: ""
+      name: "Kieran Gough",
+      email: "kierangough@gmail.com",
+      phone: "123456789",
+      address: "123 fake street"
     },
 
     education: [

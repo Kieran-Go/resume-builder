@@ -48,18 +48,21 @@ function Skills({ skills, setSkills }){
             <div className="form-section" hidden={!showing}>
                 <form>
                     <div className="input-field">
-                        <label htmlFor="responsibility-input">Skills</label>
+                        <label htmlFor="responsibility-input">Skills <span className="optional-span">Optional</span></label>
                         <input type="text" id="responsibility-input" name="responsibility-input" value={skillInput}
                          onChange={handleSkillInputChange}/>
-                        <button className="submit-button" type="button" onClick={() => addSkill()} >Add Skill</button>
                     </div> 
+                    <div className="buttons-container">
+                        <button className="submit-button" type="button" onClick={() => addSkill()} >Add Skill</button>
+                    </div>
 
                     {skills.length > 0 && (
-                        <div className="responsibility-list">
+                        <div className="item-list">
+                            <h3>Skills:</h3>
                             {skills.map((skill, index) => (
-                                <div key={index} className="responsibility-container">
+                                <div key={index} className="item skills">
                                     <p>{skill}</p>
-                                    <img src={cross} className="responsibility-delete-button" onClick={() => removeSkill(index)}></img>
+                                    <img src={cross} className="delete-button" onClick={() => removeSkill(index)}></img>
                                 </div>
                             ))}
                         </div>

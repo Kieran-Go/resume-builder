@@ -11,6 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 100%;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 /* Header styles */
@@ -33,6 +34,7 @@
     will-change: transform;
     transition: transform 0.2s ease;
 }
+
 .show-button.showing {
     transform: rotate(90deg);
     transform-origin: center;
@@ -43,9 +45,10 @@
 
 /* Form styles */
 form {
-    max-width: 80%;
     margin: auto;
+    margin-top: -20px;
     padding: 20px;
+    padding-bottom: 0;
 }
 
 .input-field {
@@ -60,24 +63,31 @@ form {
 }
 
 .input-field textarea{
-    display: block;
     font-size: 16px;
     margin-bottom: 5px;
-    width: 100%;
+    margin-left: 2%;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: rgb(139, 139, 139, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    min-width: 100%;
     min-height: 300px;
     resize: none;
 }
 
 .optional-span {
-    font-size: 12px;
-    color: gray;
+    font-size: 10px;
+    font-weight: bold;
+    color: rgb(0, 132, 255);
 }
 
 .input-field input {
     width: 100%;
     padding: 10px;
     border: 2px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
+    background-color: rgb(139, 139, 139, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
     font-size: 14px;
     transition: border-color 0.3s ease-in-out;
 }
@@ -86,21 +96,115 @@ form {
     outline: none;
 }
 
-
-.responsibility-list{
-    
+.buttons-container{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
 }
 
-.responsibility-container{
+.submit-button{
+    color: white;
+    background-color: rgb(58, 147, 255);
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 0.1s ease-in;
+    margin-top: 5px;
+}
+.submit-button:hover{
+    background-color: rgb(34, 89, 155);
+    cursor: pointer;
+}
+
+.delete-button{
+    width: 10px;
+}
+.delete-button:hover{
+    cursor: pointer;
+}
+
+.item-list h3{
+    margin-top: 0;
+    margin-left: 6%;
+    margin-bottom: 5px;
+}
+
+.item{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    border-radius: 10px;
+    max-width: 85%;
+    margin: auto;
+    margin-bottom: 10px;
+    max-height: 50px;
+    padding: 15px;
 }
 
-.responsibility-delete-button{
-    width: 10px;
+.item-info p:first-child{
+    font-weight: bold;
 }
-.responsibility-delete-button:hover{
+.item-info p:last-child{
+    margin-left: 10px;
+}
+.item-info p:not(:last-child){
+    margin-bottom: -15px;
+}
+
+.item-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.edit-item-button{
+    color: white;
+    background-color: rgb(1, 153, 1);
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    transition: background-color 0.1s ease-in;
+    will-change: transform;
+}
+.edit-item-button:hover{
+    background-color: rgb(0, 91, 0);
     cursor: pointer;
+}
+
+.remove-item-button{
+    color: white;
+    background-color: rgb(219, 0, 0);
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 2px;
+    transition: background-color 0.1s ease-in;
+    will-change: transform;
+}
+.remove-item-button:hover{
+    background-color: rgb(128, 0, 0);
+    cursor: pointer;
+}
+
+.edit-item-button:disabled, .remove-item-button:disabled{
+    color: gray;
+    background-color: rgb(128, 128, 128, 0.5);
+}
+
+.submit-button:active,
+.edit-item-button:active,
+.remove-item-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+}
+
+.responsibility-button{
+    margin-bottom: 10px;
+}
+
+.responsibilities, .skills{
+    padding: 0 10px;
 }

@@ -3,7 +3,6 @@ import educationImg from "../assets/images/education-cap.svg";
 import { useState } from "react";
 
 function Education({ education, setEducation }){
-    const hasEducation = (education.length > 0); // Checks if the education array is not empty
     const [editing, setEditing] = useState(false); // Certain buttons are disabled while editing is true
     const [editingIndex, setEditingIndex] = useState(null); // The index in the education array to edit while editing is true
     const [showing, setShowing] = useState(false); // Determine whether to show the comonpent's form
@@ -109,16 +108,18 @@ function Education({ education, setEducation }){
                     </div>
 
                     <div className="input-field">
-                        <label htmlFor="end-date">End Date</label>
+                        <label htmlFor="end-date">End Date <span className="optional-span">Optional</span></label>
                         <input type="date" id="end-date" name="endDate" value={formData.endDate} onChange={handleChange} />
                     </div> 
 
-                    <button className="submit-button" type="button" hidden={editing} onClick={newEducation}>Submit</button>
-                    <button className="submit-button" type="button" hidden={!editing} onClick={finishEditing}>Finish Editing</button>
+                    <div className="buttons-container">
+                        <button className="submit-button" type="button" hidden={editing} onClick={newEducation}>Submit</button>
+                        <button className="submit-button" type="button" hidden={!editing} onClick={finishEditing}>Finish Editing</button>
+                    </div>
                 </form>
 
                 {/* Only show when the education array is not empty */}
-                {hasEducation && (
+                {(education.length > 0) && (
                     <div className="item-list">
                         {education.map((edu, index) => (
                             <div key={index} className="item">

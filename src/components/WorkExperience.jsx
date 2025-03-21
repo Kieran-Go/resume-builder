@@ -138,30 +138,36 @@ function WorkExperience({ workExp, setWorkExp }){
                     </div>
 
                     <div className="input-field">
-                        <label htmlFor="end-date">End Date</label>
+                        <label htmlFor="end-date">End Date <span className="optional-span">Optional</span></label>
                         <input type="date" id="end-date" name="endDate" value={formData.endDate} onChange={handleChange} />
                     </div> 
 
                     <div className="input-field">
-                        <label htmlFor="responsibility-input">Responsibilities</label>
+                        <label htmlFor="responsibility-input">Responsibilities <span className="optional-span">Optional</span></label>
                         <input type="text" id="responsibility-input" name="responsibility-input" value={responsibilityInput}
                          onChange={handleResponsiblityInputChange}/>
-                        <button className="submit-button" type="button" onClick={() => addResponsibility()} >Add Responsibility</button>
                     </div> 
+                    <div className="buttons-container">
+                        <button className="submit-button responsibility-button" type="button" onClick={() => addResponsibility()} >
+                            Add Responsibility</button>
+                    </div>
 
                     {formData.responsibilities.length > 0 && (
-                        <div className="responsibility-list">
+                        <div className="item-list">
+                            <h3>Responsibilities:</h3>
                             {formData.responsibilities.map((resp, index) => (
-                                <div className="responsibility-container">
+                                <div className="item responsibilities">
                                     <p key={index}>{resp}</p>
-                                    <img src={cross} className="responsibility-delete-button" onClick={() => removeResponsibility(index)}></img>
+                                    <img src={cross} className="delete-button" onClick={() => removeResponsibility(index)}></img>
                                 </div>
                             ))}
                         </div>
                     )}
 
-                    <button className="submit-button" type="button" hidden={editing} onClick={newWorkExp}>Submit</button>
-                    <button className="submit-button" type="button" hidden={!editing} onClick={finishEditing}>Finish Editing</button>
+                    <div className="buttons-container">
+                        <button className="submit-button" type="button" hidden={editing} onClick={newWorkExp}>Submit</button>
+                        <button className="submit-button" type="button" hidden={!editing} onClick={finishEditing}>Finish Editing</button>
+                    </div>
                 </form>
 
                 {/* Only show when the education array is not empty */}

@@ -4,6 +4,8 @@ function ResumeSection({ data }) {
     const personalDetails = data.personalDetails;
     const summary = data.summary;
     const education = data.education;
+    const workExp = data.workExperience;
+    const skills = data.skills;
     return (
         <section className="resume-section">
             <div className="resume-head">
