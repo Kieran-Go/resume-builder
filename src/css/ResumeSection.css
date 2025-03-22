@@ -1,4 +1,76 @@
 .resume-section{
     position: relative;
-    left: 40%;
+    text-align: center;
+    left: 10%;
+    top: 5%;
+    width: 85%;
+    height: fit-content;
+    border: solid black 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    margin-top: -20px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
 }
+
+.resume-head{
+    color: white;
+    background-color: rgb(0, 57, 77);
+}
+
+.resume-head h1{
+   margin: 0;
+   padding: 20px;
+}
+
+.resume-head img{
+    width: 30px;
+    color: white;
+}
+
+.resume-head-details{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 90%;
+    margin-left: 4%;
+}
+
+.personal-details-item{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    gap: 10px;
+}
+
+.resume-summary{
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 20px;
+}
+
+.resume-education, .resume-work-experience{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.resume-skills{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.resume-item{
+    text-align: left;
+    padding: 0 10%;
+    margin-bottom: 30px;
+}
+.resume-item p{
+    margin: 0;
+}
+
+h2{
+    background-color: rgb(134, 255, 215, 0.7);
+    padding: 5px;
+}
+
+

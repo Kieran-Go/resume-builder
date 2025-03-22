@@ -31,7 +31,7 @@ function Summary({ summary, onTextAreaChange }){
                         id="summary"
                         name="summary"
                         readOnly={false}
-                        placeholder={summary}
+                        placeholder="Write something about yourself..."
                         onChange={onTextAreaChange}
                     >
                     </textarea>

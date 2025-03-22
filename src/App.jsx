@@ -6,28 +6,21 @@ function App() {
   // Object to store all resume data
   const [resumeData, setResumeData] = useState({
     personalDetails: {
-      name: "Kieran Gough",
-      email: "kierangough@gmail.com",
+      name: "John Doe",
+      email: "john.doe@gmail.com",
       phone: "123456789",
       address: "123 fake street"
     },
 
     education: [
-      { institution: "College of Winterhold", degree: "Ph.D in Destruction Magic", startDate: "25/03/2025", endDate: "26/05/2026" },
-      { institution: "Mages Guild", degree: "Master of Illusion Magic", startDate: "01/06/2026", endDate: "30/06/2027" },
-      { institution: "Dark Brotherhood", degree: "Shadow Assassin Training", startDate: "01/07/2027", endDate: "01/01/2028" }
     ],
 
     workExperience: [
-      { workplace: "Avalanche", position: "Mercenary", startDate: "", endDate: "", responsibilities: [
-        "Escourting the team inside the reactor", 
-        "Blowing up the reactor",
-      ] }
     ],
 
-    skills: ["Skill 1", "Skill 2", "Skill 3"],
+    skills: [],
 
-    summary: "Write something about yourself."
+    summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel quam vitae lorem fermentum scelerisque. Donec in nisi et nisl aliquet faucibus. Integer nec odio nec magna pulvinar malesuada. Nulla facilisi. Phasellus at lorem eget tortor pharetra ullamcorper. Nam euismod urna a ligula tincidunt, id facilisis neque hendrerit."
   });
 
   // Generic handler for all input fields

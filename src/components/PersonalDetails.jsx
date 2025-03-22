@@ -35,6 +35,7 @@ function PersonalDetails({ personalDetails, onInputChange }) {
                         value={personalDetails.name} 
                         onChange={onInputChange} 
                         required 
+                        maxLength={50}
                     />
                 </div>
                 
@@ -46,6 +47,7 @@ function PersonalDetails({ personalDetails, onInputChange }) {
                         name="email"
                         value={personalDetails.email} 
                         onChange={onInputChange} 
+                        maxLength={254}
                     />
                 </div>
 
@@ -57,6 +59,7 @@ function PersonalDetails({ personalDetails, onInputChange }) {
                         name="phone"
                         value={personalDetails.phone} 
                         onChange={onInputChange} 
+                        maxLength={15}
                     />
                 </div>
 
@@ -68,6 +71,7 @@ function PersonalDetails({ personalDetails, onInputChange }) {
                         name="address"
                         value={personalDetails.address} 
                         onChange={onInputChange} 
+                        maxLength={255}
                     />
                 </div>
             </form>
